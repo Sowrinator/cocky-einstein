@@ -2,11 +2,11 @@ FROM debian:7.6
 
 MAINTAINER Brad Murray <wyaeld@gmail.com> <brad.murray@datacom.co.nz>
 
-ENV POSTGRES_VERSION 9.4
+ENV POSTGRES_VERSION 9.3
 ENV DEBIAN_FRONTEND noninteractive
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
-# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc
+# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8 && \
   echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main $POSTGRES_VERSION" > /etc/apt/sources.list.d/pgdg.list
 
@@ -21,7 +21,7 @@ RUN apt-get install -y --no-install-recommends  \
     rm -Rf /var/cache/apt
 
 # Adjust PostgreSQL configuration so that remote connections to the
-# database are possible.
+# database are possible. 
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/$POSTGRES_VERSION/main/pg_hba.conf && \
     echo "listen_addresses='*'" >> /etc/postgresql/$POSTGRES_VERSION/main/postgresql.conf
 
