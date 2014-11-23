@@ -1,5 +1,4 @@
 #!/bin/bash
-
 export LANG=${LOCALE:-"en_US.UTF-8"}
 export LANGUAGE=$LANG
 
