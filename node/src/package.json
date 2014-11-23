@@ -1,0 +1,10 @@
+{
+  "name": "node-hello-postgres",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Getting stuff from postgres",
+  "author": "Cocky Einsteins",
+  "dependencies": {
+    "pg": "*"
+  }
+}

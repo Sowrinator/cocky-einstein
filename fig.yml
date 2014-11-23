@@ -1,0 +1,12 @@
+node:
+  build: node/src/.
+  links:
+    - postgres
+postgres:
+  image: wyaeld/postgres:latest
+  #ports:
+  #  - "5432:5432"
+  volumes_from:
+    - data
+data:
+  image: wyaeld/postgres:data
