@@ -3,10 +3,10 @@ node:
   links:
     - postgres
 postgres:
-  image: wyaeld/postgres:latest
+  build: postgres/src/postgres/.
   #ports:
   #  - "5432:5432"
   volumes_from:
     - data
 data:
-  image: wyaeld/postgres:data
+  build: postgres/src/data/.
