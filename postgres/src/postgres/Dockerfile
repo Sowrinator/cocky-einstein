@@ -1,7 +1,5 @@
 FROM debian:7.6
 
-MAINTAINER Brad Murray <wyaeld@gmail.com> <brad.murray@datacom.co.nz>
-
 ENV POSTGRES_VERSION 9.3
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -13,9 +11,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F
 RUN apt-get update && apt-get install -y locales sudo
 
 RUN apt-get install -y --no-install-recommends  \
-    libpq5 \
     postgresql-$POSTGRES_VERSION \
-    postgresql-client-$POSTGRES_VERSION \
     postgresql-contrib-$POSTGRES_VERSION && \
     apt-get clean && \
     rm -Rf /var/cache/apt
@@ -30,7 +26,6 @@ COPY run /usr/local/bin/run
 
 # Note: This container has no native volume, its expected to run with --volumes-from another
 
-EXPOSE 5432
 
 ENTRYPOINT ["/docker-entrypoint"]
 CMD ["/usr/local/bin/run"]
