@@ -7,6 +7,5 @@ gosu postgres postgres --single docker <<- EOSQL
    CREATE TABLE einstein ( col1 varchar(255) );
    INSERT INTO einstein VALUES ( 'Hi, Its Postgres' );
    ALTER USER postgres WITH PASSWORD 'postgres';
-   CREATE USER docker WITH PASSWORD 'docker';
-   ALTER ROLE docker SUPERUSER;
+   CREATE USER docker WITH SUPERUSER PASSWORD 'docker';
 EOSQL

@@ -7,9 +7,9 @@ console.log("tcp_addr: " + tcp_addr);
 console.log("tcp_port: " + tcp_port);
 
 var client = new pg.Client({
-    user: 'postgres',
-    password: '',
-    database: 'postgres',
+    user: 'docker',
+    password: 'docker',
+    database: 'docker',
     host: tcp_addr,
     port: tcp_port
 });
